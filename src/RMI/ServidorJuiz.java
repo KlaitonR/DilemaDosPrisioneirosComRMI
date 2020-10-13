@@ -6,11 +6,11 @@ import java.rmi.registry.LocateRegistry;
 
 public class ServidorJuiz{
 	
-	public void vereditoServidor(){
+	ServidorJuiz(){
 		
 		try {
 	
-			System.setProperty("java.rmi.server.hostname", "COLOCAR IP AQUI"); //COLOCAR IP AQUI
+			System.setProperty("java.rmi.server.hostname", "IpAqui"); //COLOCAR IP AQUI
 			LocateRegistry.createRegistry(1099);
 			Veredito v = new VereditoImple();
 			Naming.bind("JuizService", (Remote) v);
@@ -22,7 +22,6 @@ public class ServidorJuiz{
 	}
 		
 	public static void main (String args[]){
-			
 		new ServidorJuiz();
 	}
 	
